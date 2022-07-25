@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<center>
+
+    <h1>Multi-product Quantity-based Order Form</h1>
+    <table id="t1">
+        <tr bgcolor="black" style="color:white"; width="100%" border="0" cellspacing="0" cellpadding="0">
+            <th>Product Name</th>
+            <th>x unit Price</th>
+            <th>Quantity</th>
+            <th>Totals</th>
+        </tr>
+
+        <tr>
+            <td>Fortunate Window Hardware</td>
+            <td>x $30</td>
+            <td><input type="number" id="p1"></td>
+            <td><input type="text" id="u1"></td>
+        </tr>
+
+        <tr>
+            <td>Woven Window Hardware</td>
+            <td>x $30</td>
+            <td><input type="number" id="p2"></td>
+            <td><input type="text" id="u2"></td>
+        </tr>
+
+
+        <tr >
+            <td bgcolor="black" style="color:white"; colspan="3" id="tq" align="right">Product Subtotal</td>
+            <td><input type="text" id="ot"></td>
+        </tr>
+
+        <tr align="right">
+            <td colspan="5"><button onclick="total()">Submitt Order</button></td>
+        </tr>
+
+
+
+    </table>
+
+</center>
+
+<script>
+
+var a,b,tp1,sb,tpq,z,order;
+
+
+        function total()
+        {
+
+        a=parseInt(document.getElementById('p1').value);
+        b=parseInt(document.getElementById('p2').value);
+        
+
+
+            tp1=a*200;
+            document.getElementById('u1').value=tp1;
+            tp2=b*300;
+            document.getElementById('u2').value=tp2;
+           
+            sb=tp1+tp2;
+            document.getElementById('ot').value=sb;
+        }
+
+
+
+</script>
+</body>
+</html>
