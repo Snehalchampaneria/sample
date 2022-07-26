@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <center>
+        <table border="2">
+            <thead>
+                <tr>
+                    <td>Product Info</td>
+                    <td >Price/Unit</td>
+                    <td>Quantity</td>
+                    <td>Price(Subtotal)</td>
+                    <!-- <td></td> -->
+                </tr>
+            </thead>
+
+            <tbody id="data">
+                <tr>
+                    
+                </tr>
+
+
+            </tbody>
+            
+            <tfoot id="foot">
+                <tr>
+                    <td colspan="3" align="right" >total</td>
+                    <td id="cost"></td>
+                </tr>
+
+            </tfoot>
+
+
+        </table>
+
+    </center>
+
+</body>
+
+<script>
+
+
+    
+
+    const products = [
+        { 'product': 'Woven Window Hardware', 'unitprice': 30,'quantity': '','price':''},
+        { 'product': 'Fortunate software', 'unitprice': 40,'quantity': '','price':'' },
+        { 'product': 'Fortunate Window Hardware', 'unitprice': 50,'quantity': '','price':'' },
+    ]
+
+    var getdata = "";
+    var total=0;
+    var subtotal;
+    var x,y;
+
+
+    products.map((item) => {
+        getdata+= `<tr><td>${item.product}</td><td id="unitprice">${item.unitprice}</td><td id="qty"><input type="number" placeholder="Quantity"></td><td id="sub"></td><td><button onclick="total()">price</button></td></tr>`
+    })
+
+    document.getElementById('data').innerHTML=getdata;
+    
+    
+    function total()
+    {
+        x= parseInt(document.getElementById('qty').value);
+        y= parseInt(document.getElementById('unitprice').value);
+        alert(x);
+        subtotal=x*y;
+        document.getElementById('sub').value=subtotal;
+        
+    }
+
+    total=total+subtotal;
+    document.getElementById('cost').foot=total;
+
+
+    // <td>${item.total()}</td>
+    // fullName : function() {
+    // return this.firstName + " " + this.lastName;
+    // <td align="right" id="sub"></td><td><button onclick="total()">price</button></td>
+    // userRoles.get(john); 
+    // foo.input = document.getElementById('input').value
+</script>
+</html>
